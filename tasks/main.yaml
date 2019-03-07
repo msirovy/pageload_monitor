@@ -1,0 +1,13 @@
+---
+- name: Copy script
+  template:
+    src: load_stats.sh
+    dest: /usr/local/bin/load_stats.sh
+    mode: 0755
+    owner: root
+- name: Set crons
+  cron:
+    name: "{{item}}"
+    job: /usr/local/bin/load_stats.sh "{{item}}" &> /dev/null
+  with_items:
+  - {{monitor_urls}}
