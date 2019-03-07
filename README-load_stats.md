@@ -4,7 +4,7 @@ Page Load monitor
 
 Description
 -----------
-Uses curl for measure load time of given web page and report results to influxdb (influxdb installation is not included in this document)
+Uses curl for measure load time of given web page and report results to influxdb (influxdb installation is not included in this document).
 
 - Author: Marek Siorvy
 - Contact: (msirovy (at) gmail (dot) com)
@@ -12,6 +12,9 @@ Uses curl for measure load time of given web page and report results to influxdb
 
 Installation
 ------------
+Prefered way how to deploy it is ansible (it is ansible role), but in another case just get script templates/load_size.sh and configure influx directly in code. In case you want to deploy it via ansible but don't have it yet, following steps could help you begin from scratch.
+
+
 1. Create influx database and user
     ```
     CREATE DATABASE metrics
